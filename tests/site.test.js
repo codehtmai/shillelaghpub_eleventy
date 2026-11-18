@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
-import { cp, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { cp, mkdtemp, readFile, rm, symlink, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import test from "node:test";
@@ -9,14 +9,18 @@ const cli = path.resolve("node_modules/.bin/eleventy");
 async function build(t, settings, prefix, notice = "") {
   const directory = await mkdtemp(path.join(os.tmpdir(), "club-site-"));
   t.after(() => rm(directory, { recursive: true, force: true }));
-  const input = path.join(directory, "input");
-  const output = path.join(directory, "output");
+  const input = path.join(directory, "src");
+  const output = path.join(directory, "_site");
   await cp("src", input, { recursive: true });
   if (notice) await writeFile(path.join(input, "news", "sample.md"), notice);
   const settingsFile = path.join(input, "_data", "club.json");
   const club = JSON.parse(await readFile(settingsFile));
   await writeFile(settingsFile, JSON.stringify({ ...club, ...settings }));
-  execFileSync(cli, ["--input=" + input, "--output=" + output], {
+  await cp("eleventy.config.js", path.join(directory, "eleventy.config.js"));
+  await cp("package.json", path.join(directory, "package.json"));
+  await symlink(path.resolve("node_modules"), path.join(directory, "node_modules"), "dir");
+  execFileSync(cli, [], {
+    cwd: directory,
     env: { ...process.env, PATH_PREFIX: prefix }
   });
   return route => readFile(path.join(output, route, "index.html"), "utf8");

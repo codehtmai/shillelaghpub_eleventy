@@ -11,6 +11,7 @@ title: Community
 <ul>{% for post in facebookFeed.posts %}
 <li><time datetime="{{ post.date }}">{{ post.date | clubDate }}</time>
 {% if post.text %}<p>{{ post.text }}</p>{% endif %}
+{% for photo in post.photos %}<img class="post-photo" src="{{ photo | url }}" loading="lazy" alt="Photo {{ loop.index }} from the club’s {{ post.date | clubDate }} Facebook post">{% endfor %}
 <a class="textlink" href="{{ post.url }}">View post on Facebook ↗</a></li>
 {% endfor %}</ul>
 {% endif %}

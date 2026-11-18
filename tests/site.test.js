@@ -67,5 +67,12 @@ test("renders club Facebook posts as dated HTML with direct permalinks", async t
   const html = await page("community");
   assert.match(html, /<time datetime="/);
   assert.match(html, /View post on Facebook/);
+  const snapshot = JSON.parse(await readFile("src/_data/facebookFeed.json", "utf8"));
+  for (const post of snapshot.posts) {
+    for (const photo of post.photos || []) {
+      assert.ok(html.includes('src="/club' + photo + '"'), "Missing project-relative photo: " + photo);
+      assert.ok((await readFile(path.join("src", photo))).length > 0);
+    }
+  }
   assert.doesNotMatch(html, /<iframe/);
 });

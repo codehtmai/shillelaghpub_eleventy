@@ -29,3 +29,5 @@ At first deployment GitHub also ran its default branch-based Jekyll build, which
 ## Facebook reliability
 
 Visitors reported a blank or error area in the Facebook iframe even though the provider returned post data to an HTTP client. Replace the iframe with server-rendered posts that work with JavaScript disabled and Facebook requests blocked. Refresh the club’s existing published feed on deployment and every six hours. For continuity after the legacy site is retired, use a Page access token stored in GitHub Actions to read the official Graph API. Keep dated posts available if an upstream refresh fails. The confirmed pub source supplied three text posts for the initial snapshot.
+
+Post photos are copied into the Pages artifact during refresh, including image-only posts. Visitors load them from the club site alongside each post.

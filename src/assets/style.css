@@ -14,3 +14,5 @@ header{position:relative;z-index:4;background:#fbf9f2}.mast,.identity,nav,.visit
 .visit-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:28px;margin-top:40px}.visit-info .body-copy{font-size:16px}
 
 .facebook-news{max-width:72ch}.facebook-news ul{padding:0;list-style:none;margin:1.5rem 0}.facebook-news li{padding:1.5rem 0;border-top:1px solid #c9c8ba}.facebook-news time{font-weight:650;color:#685536}.facebook-news p{white-space:pre-line;margin:.4rem 0 .6rem;overflow-wrap:anywhere}.facebook-news .textlink{font-size:14px}
+
+.post-photo{display:block;max-width:100%;max-height:40rem;width:auto;height:auto;margin:.8rem 0 1rem;border-radius:3px}

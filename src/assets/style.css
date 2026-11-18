@@ -10,3 +10,5 @@ header{position:relative;z-index:4;background:#fbf9f2}.mast,.identity,nav,.visit
 @media(max-width:600px){.seal{width:40px;height:40px}.identity b{font-size:28px}.identity small{font-size:7px}.hero-body{padding-block:65px 70px}.hero h1{font-size:clamp(62px,12vw,78px)}.hero-img{object-position:62% center}.eyebrow{letter-spacing:1.9px;font-size:9px}.intro{max-width:350px}.explore{padding-block:38px 46px}.cards,.story{grid-template-columns:1fr;gap:27px}.card-photo{height:210px}.card h3{font-size:33px}.inside{padding-block:44px}.foot div{font-size:16px}.foot a{white-space:nowrap}.actions{gap:19px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 .article{max-width:68ch;font-size:18px;line-height:1.7;margin-bottom:2rem}.article img{max-width:100%;height:auto}.article a,.news a{text-decoration:underline}.news{margin-block:32px}
+
+.visit-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:28px;margin-top:40px}.visit-info .body-copy{font-size:16px}

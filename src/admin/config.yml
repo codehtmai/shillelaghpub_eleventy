@@ -25,6 +25,9 @@ collections:
           - { name: facebookUrl, label: Public Facebook page URL, widget: string, required: false }
           - { name: address, label: Street address for directions and map, widget: string, required: false }
           - { name: hours, label: Visiting hours, widget: text, required: false }
+          - { name: phone, label: Club phone number, widget: string, required: false }
+          - { name: kitchenHours, label: Kitchen hours, widget: text, required: false }
+          - { name: rental, label: Private gatherings, widget: text, required: false }
   - name: notices
     label: Club notices
     folder: src/news

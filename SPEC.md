@@ -1,32 +1,24 @@
 # The Shillelagh website specification
 
-The replacement for shillelaghpub.com should help a visitor discover the Friendly Sons of the Shillelagh, plan a visit, and follow its calendar and Facebook updates. Club volunteers should be able to update every section from a browser.
+The pub website serves visitors to the Essex Division clubhouse in West Orange. Visitors should be able to check the calendar, see recent pub news, plan a visit, and contact the pub about a gathering. Club volunteers can update the details and publish notices through Sveltia CMS.
 
 ## Sources and editorial decisions
 
-The brief identifies shillelaghpub.com as the site being replaced and names shillelaghclub.com and essexshillelagh.com as design references. The cloud proxy returned HTTP 403 for all three domains during research. Treat these as separate organizations. Use only the identity, nonprofit purpose and Irish cultural focus supplied in the brief until club details are confirmed. Never invent hours, events or contact details.
+- The Essex landing page introduces four affiliated destinations, including the pub and the foundation. Its spare typography and short navigation informed the homepage. [Essex Shillelaghs](https://shillelaghclub.com/)
+- The foundation site covers charitable programs, membership, and Irish heritage. The Story page describes the Frank Schott Blood Drive and St. Baldrick’s fundraising and links to the foundation. [Foundation](https://essexshillelagh.com/) · [Club history](https://shillelaghpub.com/club/the-order-of-the-friendly-sons-of-the-shillelagh/)
+- The pub site supplies the visitor address, phone, and separate bar and kitchen hours. Use the pub’s Friday opening time of noon. The foundation lists 3 pm on Fridays. The hall and covered deck are available by inquiry. [Visitor information](https://shillelaghpub.com/) · [Rentals](https://shillelaghpub.com/hall-rental/)
+- The existing event page identifies the public Google Calendar and its New York time zone. The pub timeline identifies Facebook Page ID 431613724250812, whose embed resolves to ShillelaghPub. [Calendar](https://shillelaghpub.com/events-list/calendar/) · [Pub Facebook page](https://www.facebook.com/ShillelaghPub)
 
-## Design
+## Design and content
 
-Create an editorial pub identity with forest green, warm ivory, brass accents, an original shamrock mark, serif headlines, outlined details and atmospheric photography. Use an illustrative interior until a club photograph is supplied. Provide an accessible mobile menu, visible focus states, and responsive layouts.
+Use forest green, ivory, brass accents, locally bundled serif and sans-serif type, and an original shamrock mark. The homepage uses four photographs from the existing pub website, optimized for distribution. The hero shows the actual bar, with supporting images of a live performance, the clubhouse's Irish displays, and the upstairs hall. [Desktop design](docs/homepage.jpg) · [Bar](https://shillelaghpub.com/wp-content/uploads/2021/12/20190624_114802-scaled.jpg) · [Band](https://shillelaghpub.com/wp-content/uploads/2021/12/Big-Train-FSOS-scaled.jpg) · [Displays](https://shillelaghpub.com/wp-content/uploads/2021/12/20190624_115004-scaled.jpg) · [Hall](https://shillelaghpub.com/wp-content/uploads/2021/04/hall-new-years-resize2.jpg)
 
-## Implementation and acceptance
+## Implementation and verification
 
-- Eleventy produces plain HTML under both a root domain and a GitHub Pages project path.
-- Provide a homepage, club story, events calendar, community updates and visit information.
-- Public Google Calendar, Facebook Page Plugin and a Google Maps location use CMS-managed settings. Keep meaningful empty states while awaiting verified values. Provide direct links alongside embeds.
-- Sveltia CMS edits the site and integration settings in GitHub. Browser authentication must use the editor's own credentials.
-- GitHub Actions builds and tests pull requests and deploys main to Pages. The production domain changes only after owner review.
-- Verify the production build, site routes, mobile navigation, CMS configuration, empty and populated integration states. Record operational handoff and remaining dependencies here.
+Eleventy builds Home, Our Story, Events, Community, and Visit the Club at a root domain or project Pages path. Sveltia CMS manages visitor information, integration settings, homepage content, and notices. Google Calendar, Facebook, and Google Maps load directly from their providers with accompanying links. The GitHub Actions workflow tests changes and deploys main to Pages.
 
-## Implemented design and verification
+The automated suite checks empty and populated settings, subpath routing, and notice publication. All three tests passed after the verified values were added. The production subpath build passed. The three actual embed URLs returned HTTP 200 with the expected club calendar, pub timeline, and mapped address. The public calendar feed also returned dated events. Chromium verified homepage imagery and the mobile route to the pub phone number. CMS sign-in requires an editor with repository access.
 
-[Desktop homepage design](docs/homepage.jpg). The responsive masthead, custom shamrock, green-shadowed interior photograph, cream serif title and brass italic club name introduce the site. Three image-led navigation cards lead to Events, Community and Visit. Photography is illustrative, ready for replacement with club-owned images.
+## Launch status
 
-The public routes are Home, Our Story, Events, Community, and Visit the Club. The admin route serves a locally bundled, version-pinned Sveltia CMS. The editable data file supplies identity, welcome text, club story, photo, address, hours, calendar ID, time zone, and Facebook page. Editors can also publish Markdown club notices with individual URLs. All public navigation uses the Pages base path.
-
-The clean dependency install, production build, empty and populated integration builds, and project-path links were tested. Chromium verified the desktop imagery, mobile menu navigation, all five public routes at 375px, and the CMS sign-in screen. External account sign-in and club-specific live feeds require the club's information and access. The calendar ID, Page URL, and visitor address remain empty until confirmed. No DNS cutover has been performed.
-
-## Publication status
-
-The website and Pages workflow were pushed to the selected GitHub repository's main branch. All three automated tests passed, including publishing a club notice into the Community section. The environment proxy denied access to the GitHub Actions API and the public Pages URL, so production deployment is unverified. The owner can select GitHub Actions as the Pages source and check the workflow run. Club-specific live integration verification is pending the confirmed public calendar ID, Facebook Page URL, and street address.
+GitHub reported Pages disabled for this private repository. The previous Actions run reached the Pages configuration step after passing installation and tests. The connected GitHub integration received HTTP 403 when enabling Pages. Select GitHub Actions under the repository’s Pages settings to enable the deployment, then dispatch or rerun the workflow. Check the Pages URL before transferring the existing pub domain. [Pages settings](https://github.com/codehtmai/shillelaghpub_eleventy/settings/pages) · [Deployment workflow](https://github.com/codehtmai/shillelaghpub_eleventy/actions/workflows/pages.yml)

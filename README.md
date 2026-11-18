@@ -33,4 +33,4 @@ Use the project Pages URL for acceptance testing. For the existing pub domain, t
 
 ## Media
 
-The initial pub and community images are AI-generated editorial illustrations. Replace them with club-owned photography when available. Cormorant Garamond and DM Sans are bundled locally under the SIL Open Font License.
+The homepage photographs come from the existing pub website. The source images and editorial decisions are recorded in SPEC.md. Cormorant Garamond and DM Sans are bundled locally under the SIL Open Font License.

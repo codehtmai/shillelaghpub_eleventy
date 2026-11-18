@@ -15,7 +15,7 @@ Use forest green, ivory, brass accents, locally bundled serif and sans-serif typ
 
 ## Implementation and verification
 
-Eleventy builds Home, Our Story, Events, Community, and Visit the Club at a root domain or project Pages path. Sveltia CMS manages visitor information, integration settings, homepage content, and notices. Google Calendar, Facebook, and Google Maps load directly from their providers with accompanying links. The GitHub Actions workflow tests changes and deploys main to Pages.
+Eleventy builds Home, Our Story, Events, Community, and Visit the Club at a root domain or project Pages path. Sveltia CMS manages visitor information, integration settings, homepage content, and notices. Google Calendar and Google Maps load directly from their providers. Facebook posts are rendered as dated HTML with direct permalinks. The GitHub Actions workflow tests changes and deploys main to Pages.
 
 The automated suite checks empty and populated settings, subpath routing, and notice publication. All three tests passed after the verified values were added. The production subpath build passed. The three actual embed URLs returned HTTP 200 with the expected club calendar, pub timeline, and mapped address. The public calendar feed also returned dated events. Chromium verified homepage imagery and the mobile route to the pub phone number. CMS sign-in requires an editor with repository access.
 
@@ -24,3 +24,8 @@ The automated suite checks empty and populated settings, subpath routing, and no
 The Eleventy workflow tested, built, and deployed the site to GitHub Pages. Live checks verified the homepage, Story, Events, Community, Visit, and the Sveltia editor, plus the nine referenced assets. The live Events, Community and Visit pages contain the confirmed club calendar, pub Facebook Page and West Orange address. [Published site](https://codehtmai.github.io/shillelaghpub_eleventy/) · [Verified workflow run](https://github.com/codehtmai/shillelaghpub_eleventy/actions/runs/44235442693/attempts/2)
 
 At first deployment GitHub also ran its default branch-based Jekyll build, which failed. Selecting GitHub Actions as the Pages source avoids that redundant build. The existing pub domain awaits owner-approved cutover. [Pages settings](https://github.com/codehtmai/shillelaghpub_eleventy/settings/pages)
+
+
+## Facebook reliability
+
+Visitors reported a blank or error area in the Facebook iframe even though the provider returned post data to an HTTP client. Replace the iframe with server-rendered posts that work with JavaScript disabled and Facebook requests blocked. Refresh the club’s existing published feed on deployment and every six hours. For continuity after the legacy site is retired, use a Page access token stored in GitHub Actions to read the official Graph API. Keep dated posts available if an upstream refresh fails. The confirmed pub source supplied three text posts for the initial snapshot.

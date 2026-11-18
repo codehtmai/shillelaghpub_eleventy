@@ -46,8 +46,8 @@ test("renders provider URLs and direct links from editor settings", async t => {
   assert.match(events, /calendar.google.com\/calendar\/embed\?src=test%2Bclub%40example.org&amp;ctz=America%2FNew_York/);
   assert.match(events, /mode=AGENDA/);
   const community = await page("community");
-  assert.match(community, /plugins\/page.php\?href=https%3A%2F%2Fwww.facebook.com%2Fexampleclub/);
   assert.match(community, /href="https:\/\/www.facebook.com\/exampleclub"/);
+  assert.doesNotMatch(community, /facebook.com\/plugins|View post on Facebook/);
   const visit = await page("visit");
   assert.match(visit, /maps.google.com\/maps\?q=1%20Test%20Street%2C%20Example/);
   assert.match(visit, /destination=1%20Test%20Street%2C%20Example/);
@@ -60,4 +60,12 @@ test("publishing a CMS notice creates a linked article", async t => {
   const article = await page("news/sample");
   assert.match(article, /<h1>Club gathering<\/h1>/);
   assert.match(article, /<strong>editorial test<\/strong>/);
+});
+
+test("renders club Facebook posts as dated HTML with direct permalinks", async t => {
+  const page = await build(t, { facebookUrl: "https://www.facebook.com/ShillelaghPub" }, "/club/");
+  const html = await page("community");
+  assert.match(html, /<time datetime="/);
+  assert.match(html, /View post on Facebook/);
+  assert.doesNotMatch(html, /<iframe/);
 });

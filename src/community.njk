@@ -4,5 +4,16 @@ title: Community
 ---
 <section class="wrap inside"><p class="eyebrow dark"><span></span>From the club</p><h1>Our Community</h1><p class="lede">Club news and conversations from Facebook.</p>
 {% if collections.clubNews.length %}<section class="news"><h2>Club notices</h2><ul>{% for notice in collections.clubNews | reverse %}<li><a class="textlink" href="{{ notice.url | url }}">{{ notice.data.title }}</a></li>{% endfor %}</ul></section>{% endif %}
-{% set fb = club.facebookUrl | facebookPage %}{% if fb %}<iframe class="embed fb" title="The club’s Facebook timeline" src="https://www.facebook.com/plugins/page.php?href={{ fb | query }}&amp;tabs=timeline&amp;width=500&amp;height=600&amp;adapt_container_width=true" height="600"></iframe><a class="textlink" href="{{ fb }}">Visit our Facebook page ↗</a>
+{% set fb = club.facebookUrl | facebookPage %}
+{% if fb %}
+<section class="facebook-news" aria-label="Facebook updates">
+{% if fb == facebookFeed.pageUrl and facebookFeed.posts.length %}
+<ul>{% for post in facebookFeed.posts %}
+<li><time datetime="{{ post.date }}">{{ post.date | clubDate }}</time>
+{% if post.text %}<p>{{ post.text }}</p>{% endif %}
+<a class="textlink" href="{{ post.url }}">View post on Facebook ↗</a></li>
+{% endfor %}</ul>
+{% endif %}
+<a class="button" href="{{ fb }}">Visit our Facebook page ↗</a>
+</section>
 {% else %}<div class="notice"><h2>Facebook updates</h2><p>Posts will appear here once the club connects its Facebook page.</p></div>{% endif %}</section>

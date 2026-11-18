@@ -21,4 +21,6 @@ The automated suite checks empty and populated settings, subpath routing, and no
 
 ## Launch status
 
-GitHub reported Pages disabled for this private repository. The previous Actions run reached the Pages configuration step after passing installation and tests. The connected GitHub integration received HTTP 403 when enabling Pages. Select GitHub Actions under the repository’s Pages settings to enable the deployment, then dispatch or rerun the workflow. Check the Pages URL before transferring the existing pub domain. [Pages settings](https://github.com/codehtmai/shillelaghpub_eleventy/settings/pages) · [Deployment workflow](https://github.com/codehtmai/shillelaghpub_eleventy/actions/workflows/pages.yml)
+The Eleventy workflow tested, built, and deployed the site to GitHub Pages. Live checks verified the homepage, Story, Events, Community, Visit, and the Sveltia editor, plus the nine referenced assets. The live Events, Community and Visit pages contain the confirmed club calendar, pub Facebook Page and West Orange address. [Published site](https://codehtmai.github.io/shillelaghpub_eleventy/) · [Verified workflow run](https://github.com/codehtmai/shillelaghpub_eleventy/actions/runs/44235442693/attempts/2)
+
+At first deployment GitHub also ran its default branch-based Jekyll build, which failed. Selecting GitHub Actions as the Pages source avoids that redundant build. The existing pub domain awaits owner-approved cutover. [Pages settings](https://github.com/codehtmai/shillelaghpub_eleventy/settings/pages)

@@ -1,0 +1,19 @@
+{
+  "name": "shillelagh-club-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "test": "node --test tests/*.test.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.8",
+    "@fontsource-variable/cormorant-garamond": "5.3.0",
+    "@fontsource-variable/dm-sans": "5.3.0",
+    "@sveltia/cms": "0.269.0"
+  }
+}

@@ -1,0 +1,37 @@
+backend:
+  name: github
+  repo: codehtmai/shillelaghpub_eleventy
+  branch: main
+media_folder: src/assets/uploads
+public_folder: /assets/uploads
+collections:
+  - name: club
+    label: Club website
+    files:
+      - name: settings
+        label: Club information and integrations
+        file: src/_data/club.json
+        format: json
+        fields:
+          - { name: name, label: Club name, widget: string }
+          - { name: organization, label: Organization name, widget: string }
+          - { name: heroLead, label: Welcome heading first line, widget: string }
+          - { name: intro, label: Homepage introduction, widget: text }
+          - { name: heroImage, label: Homepage photograph, widget: image }
+          - { name: storyTitle, label: Story heading, widget: string }
+          - { name: story, label: Club story, widget: text }
+          - { name: calendarId, label: Public Google Calendar ID, widget: string, required: false, hint: "Copy Calendar ID from Settings → Integrate calendar. Enable public event viewing." }
+          - { name: calendarZone, label: Calendar time zone, widget: string, hint: "Use a time zone such as America/New_York." }
+          - { name: facebookUrl, label: Public Facebook page URL, widget: string, required: false }
+          - { name: address, label: Street address for directions and map, widget: string, required: false }
+          - { name: hours, label: Visiting hours, widget: text, required: false }
+  - name: notices
+    label: Club notices
+    folder: src/news
+    create: true
+    extension: md
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - { name: title, label: Headline, widget: string }
+      - { name: date, label: Publication date, widget: datetime }
+      - { name: body, label: Notice, widget: markdown }

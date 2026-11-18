@@ -26,3 +26,7 @@ Create an editorial pub identity with forest green, warm ivory, brass accents, a
 The public routes are Home, Our Story, Events, Community, and Visit the Club. The admin route serves a locally bundled, version-pinned Sveltia CMS. The editable data file supplies identity, welcome text, club story, photo, address, hours, calendar ID, time zone, and Facebook page. Editors can also publish Markdown club notices with individual URLs. All public navigation uses the Pages base path.
 
 The clean dependency install, production build, empty and populated integration builds, and project-path links were tested. Chromium verified the desktop imagery, mobile menu navigation, all five public routes at 375px, and the CMS sign-in screen. External account sign-in and club-specific live feeds require the club's information and access. The calendar ID, Page URL, and visitor address remain empty until confirmed. No DNS cutover has been performed.
+
+## Publication status
+
+The website and Pages workflow were pushed to the selected GitHub repository's main branch. All three automated tests passed, including publishing a club notice into the Community section. The environment proxy denied access to the GitHub Actions API and the public Pages URL, so production deployment is unverified. The owner can select GitHub Actions as the Pages source and check the workflow run. Club-specific live integration verification is pending the confirmed public calendar ID, Facebook Page URL, and street address.

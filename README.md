@@ -17,13 +17,19 @@ Eleventy prints the development server address. The static output is in `_site/`
 
 ## Edit the site
 
-1. Open **Club editor** in the website footer. Sign in with a GitHub account that can write to this repository. Sveltia supports signing in with a personal access token. Scope each editor's token to this repository, with Contents read and write. Enter it only in the CMS sign-in screen. Branch rules must allow the editor's publication.
+1. Open **Club editor** in the website footer and choose **Sign In Using Access Token**. Follow the GitHub token-generation link in the prompt. For the repository owner, a fine-grained token scoped to `codehtmai/shillelaghpub_eleventy` needs **Contents → Read and write**. Enter your token in the editor prompt. Each editor needs their own GitHub account with write access and a token eligible to edit this repository.
 2. Open **Club website → Club information and integrations** to change the homepage, story, photograph, visiting details, or external services.
 3. For Google Calendar, make the club calendar public with event details visible. Under **Settings → Integrate calendar**, copy the Calendar ID. Enter that ID and the time zone in the editor.
 4. Enter the public Facebook Page URL. The Community page links directly to this Page. Dated posts are synchronized for the configured ShillelaghPub feed.
 5. Enter the complete street address including town, state and ZIP. This powers both the map and the directions link. Enter hours only when confirmed.
 6. For a standalone announcement, open **Club notices**, create a notice, and publish. It appears on Community and has its own shareable page.
 7. Publish saves the content to GitHub and starts the build. Calendar events update directly from Google Calendar. GitHub Actions refreshes Facebook posts on deployment and on a six-hour schedule.
+
+### Enable one-click GitHub sign-in
+
+The Pages site currently offers token sign-in. For volunteers to use **Sign In with GitHub**, deploy the official Sveltia CMS Authenticator to a club-controlled Cloudflare Worker and install its GitHub App on this repository. Use the Worker's `/callback` URL when registering the app, store its client credentials in the Worker, and set `ALLOWED_DOMAINS` to `codehtmai.github.io` for this deployment. [Authenticator setup](https://github.com/sveltia/sveltia-cms-auth#how-to-use-it)
+
+Once deployed, set `backend.base_url` in `src/admin/config.yml` to the Worker's public HTTPS origin and set `backend.auth_methods` to `[oauth, token]`. After the Pages deployment, verify that GitHub authorization returns the editor to the club's content collections. Only the public Worker address belongs in the CMS configuration.
 
 ## Publish with GitHub Pages
 

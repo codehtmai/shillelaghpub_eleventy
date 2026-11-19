@@ -35,3 +35,7 @@ Post photos are copied into the Pages artifact during refresh, including image-o
 ## Homepage visitor information and menu
 
 The homepage uses the CMS pub and kitchen hours, and the shared footer links the CMS address to directions. Show the current or upcoming Friday–Sunday period and the following Friday–Sunday in the calendar’s local time. The Pages workflow reads the public Google iCalendar feed every six hours and renders dated lists, including recurring and all-day events. Keep the full calendar on Events. The Menu route preserves the original /menus/ URL and transcribes the old site's June 26, 2024 menu edition into editable dishes and prices. [Published menu source](https://shillelaghpub.com/menus/)
+
+## Club editor sign-in
+
+The GitHub Pages editor uses Sveltia’s token sign-in until a club-controlled OAuth service is available. Sveltia defaults the OAuth button to Netlify when its backend has no authenticator URL. Enable that button only after configuring the club’s service. The repository README describes GitHub App installation and the CMS settings for the switch.

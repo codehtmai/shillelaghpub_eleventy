@@ -1,0 +1,21 @@
+---
+title: Menu
+layout: base.njk
+---
+<section class="wrap inside pub-menu">
+  <p class="eyebrow dark"><span></span>Pub menu</p>
+  <h1>{{ pubMenu.title }}</h1>
+  <p class="menu-date">Menu dated {{ pubMenu.edition }}</p>
+  <nav class="menu-jumps" aria-label="Menu sections">{% for section in pubMenu.sections %}
+    <a href="#section-{{ loop.index }}">{{ section.name }}</a>{% endfor %}
+  </nav>
+  {% for section in pubMenu.sections %}
+  <section class="menu-section" id="section-{{ loop.index }}">
+    <h2>{{ section.name }}</h2>
+    <ul>{% for dish in section.items %}
+      <li><div><h3>{{ dish.name }}</h3><span>{{ dish.price }}</span></div>
+        {% if dish.description %}<p>{{ dish.description }}</p>{% endif %}</li>
+    {% endfor %}</ul>
+  </section>
+  {% endfor %}
+</section>

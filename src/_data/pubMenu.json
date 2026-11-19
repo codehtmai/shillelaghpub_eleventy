@@ -1,0 +1,151 @@
+{
+  "title": "Shillelagh Club Grub",
+  "edition": "June 26, 2024",
+  "sections": [
+    {
+      "name": "Shillelagh specials",
+      "items": [
+        {
+          "name": "Mac ’n Cheese",
+          "price": "Small $8.95 · Large $12.95",
+          "description": "Cheesy pasta. Add bacon, chicken or pulled pork for $2.95."
+        },
+        {
+          "name": "Shillelagh Sliders",
+          "price": "$14.95",
+          "description": "Three mini burgers, chicken or pork sliders, served with fries."
+        },
+        {
+          "name": "The Shillelagh Burger",
+          "price": "$15.95",
+          "description": "10 oz burger with lettuce, tomato and onion on brioche, served with fries. Add American, Swiss, cheddar, bleu, pepper jack, Irish cheddar, mozzarella or provolone for $0.95. Add bacon or Taylor ham for $2.95."
+        }
+      ]
+    },
+    {
+      "name": "Sandwiches",
+      "items": [
+        {
+          "name": "BLT – An American Classic",
+          "price": "$13.95",
+          "description": "Served with fries."
+        },
+        {
+          "name": "Bacon and Bleu Burger",
+          "price": "$16.95",
+          "description": "10 oz ground beef, bacon, bleu cheese, beer-braised onions and bleu cheese dressing. Served with fries."
+        },
+        {
+          "name": "Caprese",
+          "price": "$14.95",
+          "description": "Grilled chicken, basil, arugula, mozzarella, tomato and balsamic glaze. Served with fries."
+        },
+        {
+          "name": "Chicken – Fried or Grilled",
+          "price": "$14.95",
+          "description": "Choice of toppings. Served with fries."
+        },
+        {
+          "name": "Grilled Cheese",
+          "price": "$12.95",
+          "description": "Choice of cheese on rye. Served with fries."
+        },
+        {
+          "name": "Paddy Melt",
+          "price": "$16.95",
+          "description": "10 oz ground beef, sautéed onions and choice of cheese on toasted rye. Served with fries."
+        },
+        {
+          "name": "Portobello",
+          "price": "$14.95",
+          "description": "Grilled portobello over baby arugula with mozzarella, roasted red peppers and pesto aioli on brioche. Served with fries."
+        },
+        {
+          "name": "Taylor Ham, Egg and Cheese",
+          "price": "$8.95",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "Appys",
+      "items": [
+        {
+          "name": "Chicken Fingers & Fries",
+          "price": "$14.95",
+          "description": ""
+        },
+        {
+          "name": "Chicken Wings",
+          "price": "$14.95",
+          "description": "Buffalo, BBQ, sweet heat, Guinness BBQ, garlic parm, Asian teriyaki, sweet chili or Shillelagh dry rub."
+        },
+        {
+          "name": "Fried Mozzarella Sticks",
+          "price": "$11.95",
+          "description": ""
+        },
+        {
+          "name": "Garlic Parm Fries",
+          "price": "$9.95",
+          "description": ""
+        },
+        {
+          "name": "Irish Loaded Fries",
+          "price": "$12.95",
+          "description": ""
+        },
+        {
+          "name": "Nachos",
+          "price": "$14.95",
+          "description": "House-made queso, shredded lettuce, pico de gallo, jalapeños and sour cream. Add chicken for $2.95."
+        },
+        {
+          "name": "Pierogies",
+          "price": "$11.95",
+          "description": ""
+        },
+        {
+          "name": "Pretzel Sticks",
+          "price": "$11.95",
+          "description": ""
+        },
+        {
+          "name": "Quesadillas",
+          "price": "$12.95",
+          "description": "Add chicken for $2.95 or Taylor ham for $2.95."
+        }
+      ]
+    },
+    {
+      "name": "Salads",
+      "items": [
+        {
+          "name": "Arugula Salad",
+          "price": "$9.95",
+          "description": "Bacon, red onions, gorgonzola and sun-dried figs with balsamic vinaigrette."
+        },
+        {
+          "name": "Caesar Salad",
+          "price": "$9.95",
+          "description": "Add breaded or grilled chicken for $2.95."
+        }
+      ]
+    },
+    {
+      "name": "Sides",
+      "items": [
+        {
+          "name": "Basket of Fries",
+          "price": "$6.95",
+          "description": ""
+        },
+        {
+          "name": "Basket of Onion Rings",
+          "price": "$7.95",
+          "description": ""
+        }
+      ]
+    }
+  ]
+}

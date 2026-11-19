@@ -22,6 +22,9 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test
+      - name: Refresh weekend calendar
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        run: node scripts/refresh-weekends.mjs
       - name: Refresh public Facebook posts
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         run: node scripts/refresh-facebook.mjs

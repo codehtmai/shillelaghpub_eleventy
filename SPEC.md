@@ -31,3 +31,7 @@ At first deployment GitHub also ran its default branch-based Jekyll build, which
 Visitors reported a blank or error area in the Facebook iframe even though the provider returned post data to an HTTP client. Replace the iframe with server-rendered posts that work with JavaScript disabled and Facebook requests blocked. Refresh the club’s existing published feed on deployment and every six hours. For continuity after the legacy site is retired, use a Page access token stored in GitHub Actions to read the official Graph API. Keep dated posts available if an upstream refresh fails. The confirmed pub source supplied three text posts for the initial snapshot.
 
 Post photos are copied into the Pages artifact during refresh, including image-only posts. Visitors load them from the club site alongside each post.
+
+## Homepage visitor information and menu
+
+The homepage uses the CMS pub and kitchen hours, and the shared footer links the CMS address to directions. Show the current or upcoming Friday–Sunday period and the following Friday–Sunday in the calendar’s local time. The Pages workflow reads the public Google iCalendar feed every six hours and renders dated lists, including recurring and all-day events. Keep the full calendar on Events. The Menu route preserves the original /menus/ URL and transcribes the old site's June 26, 2024 menu edition into editable dishes and prices. [Published menu source](https://shillelaghpub.com/menus/)

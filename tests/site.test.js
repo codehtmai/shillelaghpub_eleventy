@@ -26,9 +26,9 @@ async function build(t, settings, prefix, notice = "") {
   return route => readFile(path.join(output, route, "index.html"), "utf8");
 }
 
-test("renders five public pages and handles unconfigured services on a project subpath", async t => {
+test("renders six public pages and handles unconfigured services on a project subpath", async t => {
   const page = await build(t, { facebookUrl: "", address: "", calendarId: "" }, "/club/");
-  for (const route of ["", "story", "community", "events", "visit"]) {
+  for (const route of ["", "story", "menus", "community", "events", "visit"]) {
     const html = await page(route);
     assert.match(html, /<h1>/);
     assert.match(html, /href="\/club\/assets\/style.css"/);

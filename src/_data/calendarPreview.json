@@ -1,0 +1,43 @@
+{
+  "calendarId": "c_t4nudogshon5mmkek4fln63emc@group.calendar.google.com",
+  "zone": "America/New_York",
+  "weekends": [
+    {
+      "until": "2026-11-23T05:00:00.000Z",
+      "label": "Nov 20 – 22",
+      "events": [
+        {
+          "title": "Punch The Monkey",
+          "day": "Fri, Nov 20",
+          "time": "8:00 PM"
+        },
+        {
+          "title": "Scarlet Magnolia",
+          "day": "Sat, Nov 21",
+          "time": "8:00 PM"
+        },
+        {
+          "title": "Blood Drive",
+          "day": "Sun, Nov 22",
+          "time": "All day"
+        }
+      ]
+    },
+    {
+      "until": "2026-11-30T05:00:00.000Z",
+      "label": "Nov 27 – 29",
+      "events": [
+        {
+          "title": "The Pub Band",
+          "day": "Fri, Nov 27",
+          "time": "8:00 PM"
+        },
+        {
+          "title": "Poet Section",
+          "day": "Sat, Nov 28",
+          "time": "8:00 PM"
+        }
+      ]
+    }
+  ]
+}

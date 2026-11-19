@@ -28,6 +28,25 @@ collections:
           - { name: phone, label: Club phone number, widget: string, required: false }
           - { name: kitchenHours, label: Kitchen hours, widget: text, required: false }
           - { name: rental, label: Private gatherings, widget: text, required: false }
+      - name: pubmenu
+        label: Pub menu
+        file: src/_data/pubMenu.json
+        format: json
+        fields:
+          - { name: title, label: Menu title, widget: string }
+          - { name: edition, label: Menu edition date, widget: string }
+          - name: sections
+            label: Menu sections
+            widget: list
+            fields:
+              - { name: name, label: Section name, widget: string }
+              - name: items
+                label: Dishes
+                widget: list
+                fields:
+                  - { name: name, label: Dish name, widget: string }
+                  - { name: price, label: Price, widget: string }
+                  - { name: description, label: Description and options, widget: text, required: false }
   - name: notices
     label: Club notices
     folder: src/news

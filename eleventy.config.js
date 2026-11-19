@@ -14,6 +14,10 @@ export default function (config) {
       config.addPassthroughCopy({ ["node_modules/@fontsource-variable/" + family + "/files/" + file]: "assets/" + file });
     }
   }
+  config.addFilter("currentWeekends", (preview, club) => {
+    if (!club.calendarId || preview?.calendarId !== club.calendarId || preview.zone !== club.calendarZone) return [];
+    return preview.weekends.filter(weekend => Date.parse(weekend.until) > Date.now());
+  });
   config.addFilter("query", value => encodeURIComponent(value));
   config.addFilter("facebookPage", value => {
     try {

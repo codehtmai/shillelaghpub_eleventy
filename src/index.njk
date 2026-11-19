@@ -3,4 +3,23 @@ layout: base.njk
 title: Home
 ---
 <section class="hero"><img class="hero-img" src="{{ club.heroImage | url }}" alt="" fetchpriority="high"><div class="wrap hero-body"><p class="eyebrow"><span></span>{{ club.organization }}</p><h1>{{ club.heroLead }}<br><em>{{ club.name }}.</em></h1><p class="intro">{{ club.intro }}</p><div class="actions"><a class="button" href="{{ '/events/' | url }}"><svg class="ico"><use href="#calendar"/></svg>Explore Events</a><a class="secondary" href="{{ '/story/' | url }}">Our Story <svg class="ico"><use href="#arrow"/></svg></a></div></div></section>
+<section class="wrap home-info" aria-label="Weekend events and visiting hours">
+  <div class="weekends">
+    <h2>Weekends at the club</h2>
+    {% set listings = calendarPreview | currentWeekends(club) %}
+    {% for weekend in listings %}
+    <section class="weekend"><h3>{{ weekend.label }}</h3>
+      {% if weekend.events.length %}<ul>{% for event in weekend.events %}
+      <li><span>{{ event.day }} · {{ event.time }}</span><strong>{{ event.title }}</strong></li>
+      {% endfor %}</ul>{% else %}<p>No events listed for this weekend.</p>{% endif %}
+    </section>
+    {% else %}<p>Check the club calendar for upcoming events.</p>{% endfor %}
+    <a class="textlink" href="{{ '/events/' | url }}">Full club calendar ↗</a>
+  </div>
+  <div class="home-hours">
+    {% if club.hours %}<h2>Pub hours</h2><p>{{ club.hours }}</p>{% endif %}
+    {% if club.kitchenHours %}<h2>Kitchen hours</h2><p>{{ club.kitchenHours }}</p>{% endif %}
+    <a class="textlink" href="{{ '/menus/' | url }}">View the menu ↗</a>
+  </div>
+</section>
 <section class="wrap explore"><div class="eyebrow dark"><span></span> Around the club</div><h2>Life at {{ club.name }}</h2><div class="cards">{% for card in cards %}<a class="card" href="{{ card.path | url }}"><div class="card-photo"><img src="{{ card.image | url }}" alt=""></div><div class="card-text"><h3>{{ card.title }}</h3><span class="round"><svg class="ico"><use href="#arrow"/></svg></span></div><p>{{ card.description }}</p></a>{% endfor %}</div></section>

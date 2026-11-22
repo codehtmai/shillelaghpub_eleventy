@@ -1,6 +1,6 @@
 # The Shillelagh website specification
 
-The pub website serves visitors to the Essex Division clubhouse in West Orange. Visitors should be able to check the calendar, see recent pub news, plan a visit, and contact the pub about a gathering. Club volunteers can update the details and publish notices through Sveltia CMS.
+The pub website serves visitors to the Essex Division clubhouse in West Orange. Visitors should be able to check the calendar, see recent pub news, plan a visit, and contact the pub about a gathering. Club volunteers can update the details and publish notices through Decap CMS.
 
 ## Sources and editorial decisions
 
@@ -15,13 +15,13 @@ Use forest green, ivory, brass accents, locally bundled serif and sans-serif typ
 
 ## Implementation and verification
 
-Eleventy builds Home, Our Story, Events, Community, and Visit the Club at a root domain or project Pages path. Sveltia CMS manages visitor information, integration settings, homepage content, and notices. Google Calendar and Google Maps load directly from their providers. Facebook posts are rendered as dated HTML with direct permalinks. The GitHub Actions workflow tests changes and deploys main to Pages.
+Eleventy builds Home, Our Story, Events, Community, and Visit the Club at a root domain or project Pages path. Decap CMS manages visitor information, integration settings, homepage content, and notices. Google Calendar and Google Maps load directly from their providers. Facebook posts are rendered as dated HTML with direct permalinks. The GitHub Actions workflow tests changes and deploys main to Pages.
 
 The automated suite checks empty and populated settings, subpath routing, and notice publication. All three tests passed after the verified values were added. The production subpath build passed. The three actual embed URLs returned HTTP 200 with the expected club calendar, pub timeline, and mapped address. The public calendar feed also returned dated events. Chromium verified homepage imagery and the mobile route to the pub phone number. CMS sign-in requires an editor with repository access.
 
 ## Launch status
 
-The Eleventy workflow tested, built, and deployed the site to GitHub Pages. Live checks verified the homepage, Story, Events, Community, Visit, and the Sveltia editor, plus the nine referenced assets. The live Events, Community and Visit pages contain the confirmed club calendar, pub Facebook Page and West Orange address. [Published site](https://codehtmai.github.io/shillelaghpub_eleventy/) · [Verified workflow run](https://github.com/codehtmai/shillelaghpub_eleventy/actions/runs/44235442693/attempts/2)
+The Eleventy workflow tested, built, and deployed the site to GitHub Pages. Live checks verified the homepage, Story, Events, Community, Visit, and the club editor, plus the nine referenced assets. The live Events, Community and Visit pages contain the confirmed club calendar, pub Facebook Page and West Orange address. [Published site](https://codehtmai.github.io/shillelaghpub_eleventy/) · [Verified workflow run](https://github.com/codehtmai/shillelaghpub_eleventy/actions/runs/44235442693/attempts/2)
 
 At first deployment GitHub also ran its default branch-based Jekyll build, which failed. Selecting GitHub Actions as the Pages source avoids that redundant build. The existing pub domain awaits owner-approved cutover. [Pages settings](https://github.com/codehtmai/shillelaghpub_eleventy/settings/pages)
 
@@ -38,4 +38,4 @@ The homepage uses the CMS pub and kitchen hours, and the shared footer links the
 
 ## Club editor sign-in
 
-The GitHub Pages editor uses Sveltia’s token sign-in until a club-controlled OAuth service is available. Sveltia defaults the OAuth button to Netlify when its backend has no authenticator URL. Enable that button only after configuring the club’s service. The repository README describes GitHub App installation and the CMS settings for the switch.
+The GitHub Pages editor uses Decap CMS with the club’s DecapBridge Git Gateway and PKCE configuration. Volunteers use invited email addresses and the identity providers offered by DecapBridge. The club owner manages collaborator access in DecapBridge. The footer targets the registered /admin/index.html login address. Keep the public configuration and editing collections together; the repository access credential belongs in DecapBridge.

@@ -5,8 +5,6 @@ export default function (config) {
   config.addPassthroughCopy({ "src/_data/facebookFeed.json": "assets/facebook-feed.json" });
   const clubDate = new Intl.DateTimeFormat("en-US", { dateStyle: "long", timeZone: "America/New_York" });
   config.addFilter("clubDate", value => clubDate.format(new Date(value)));
-  config.addPassthroughCopy({ "node_modules/@sveltia/cms/dist/sveltia-cms.js": "admin/sveltia-cms.js" });
-  config.addPassthroughCopy({ "node_modules/@sveltia/cms/dist/chunks": "admin/chunks" });
   for (const [family, styles] of [["cormorant-garamond", ["normal", "italic"]], ["dm-sans", ["normal"]]]) {
     config.addPassthroughCopy({ ["node_modules/@fontsource-variable/" + family + "/LICENSE"]: "assets/" + family + "-LICENSE.txt" });
     for (const style of styles) {

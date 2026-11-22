@@ -1,6 +1,6 @@
 # The Shillelagh
 
-An Eleventy website for the Friendly Sons of the Shillelagh, with Sveltia CMS and a GitHub Pages deployment workflow. The design, sources, and delivery status are in [SPEC.md](SPEC.md).
+An Eleventy website for the Friendly Sons of the Shillelagh, with Decap CMS and DecapBridge and a GitHub Pages deployment workflow. The design, sources, and delivery status are in [SPEC.md](SPEC.md).
 
 ## Run locally
 
@@ -17,7 +17,7 @@ Eleventy prints the development server address. The static output is in `_site/`
 
 ## Edit the site
 
-1. Open **Club editor** in the website footer and choose **Sign In Using Access Token**. Follow the GitHub token-generation link in the prompt. For the repository owner, a fine-grained token scoped to `codehtmai/shillelaghpub_eleventy` needs **Contents → Read and write**. Enter your token in the editor prompt. Each editor needs their own GitHub account with write access and a token eligible to edit this repository.
+1. Accept the club’s DecapBridge invitation, then open **Club editor** in the footer. Click the login button and sign in using the invited email address with Google, Microsoft, or the method offered by DecapBridge.
 2. Open **Club website → Club information and integrations** to change the homepage, story, photograph, visiting details, or external services.
 3. For Google Calendar, make the club calendar public with event details visible. Under **Settings → Integrate calendar**, copy the Calendar ID. Enter that ID and the time zone in the editor.
 4. Enter the public Facebook Page URL. The Community page links directly to this Page. Dated posts are synchronized for the configured ShillelaghPub feed.
@@ -25,11 +25,9 @@ Eleventy prints the development server address. The static output is in `_site/`
 6. For a standalone announcement, open **Club notices**, create a notice, and publish. It appears on Community and has its own shareable page.
 7. Publish saves the content to GitHub and starts the build. Calendar events update directly from Google Calendar. GitHub Actions refreshes Facebook posts on deployment and on a six-hour schedule.
 
-### Enable one-click GitHub sign-in
+### Manage editor access
 
-The Pages site currently offers token sign-in. For volunteers to use **Sign In with GitHub**, deploy the official Sveltia CMS Authenticator to a club-controlled Cloudflare Worker and install its GitHub App on this repository. Use the Worker's `/callback` URL when registering the app, store its client credentials in the Worker, and set `ALLOWED_DOMAINS` to `codehtmai.github.io` for this deployment. [Authenticator setup](https://github.com/sveltia/sveltia-cms-auth#how-to-use-it)
-
-Once deployed, set `backend.base_url` in `src/admin/config.yml` to the Worker's public HTTPS origin and set `backend.auth_methods` to `[oauth, token]`. After the Pages deployment, verify that GitHub authorization returns the editor to the club's content collections. Only the public Worker address belongs in the CMS configuration.
+In the club’s DecapBridge dashboard, open the site and use **Manage collaborators** to invite or remove editors. The registered CMS login URL is `https://codehtmai.github.io/shillelaghpub_eleventy/admin/index.html`. The public PKCE and gateway endpoints are in `src/admin/config.yml`. Manage the repository credential in DecapBridge. When changing the public domain, update the CMS login URL in DecapBridge and the public site URL in the CMS configuration together.
 
 ## Publish with GitHub Pages
 

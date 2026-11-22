@@ -42,4 +42,6 @@ The homepage uses the CMS pub and kitchen hours, and the shared footer links the
 
 The GitHub Pages editor uses Decap CMS with the pub’s DecapBridge Git Gateway and PKCE configuration. Volunteers use invited email addresses and the identity providers offered by DecapBridge. The site administrator manages collaborator access in DecapBridge. The footer targets the registered /admin/index.html login address. Keep the public configuration and editing collections together; the repository access credential belongs in DecapBridge.
 
-Notice images uploaded through the editor use site-root media paths in Markdown. Eleventy resolves those paths against the deployment prefix when rendering notice pages.
+Show pub announcements in full below the homepage welcome and before weekend events and hours, newest first. Include existing notices by default. Editors can turn off **Show on homepage** to retire an announcement from the homepage while keeping its News page. Omit the section when there are no homepage notices.
+
+Notice images uploaded through the editor use site-root media paths in Markdown. Eleventy resolves those paths against the deployment prefix on the homepage and individual notice pages.

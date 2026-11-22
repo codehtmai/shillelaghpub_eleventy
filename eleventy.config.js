@@ -3,7 +3,7 @@ export default function (config) {
   // Decap writes site-root media paths into notice Markdown.
   config.htmlTransformer.addUrlTransform("html", url =>
     url.startsWith("/assets/uploads/") ? config.getFilter("url")(url) : url,
-    { enabled: page => page.url?.startsWith("/news/") }
+    { enabled: page => page.url === "/" || page.url?.startsWith("/news/") }
   );
   config.addPassthroughCopy("src/assets");
   config.addPassthroughCopy("src/admin");
@@ -17,6 +17,9 @@ export default function (config) {
       config.addPassthroughCopy({ ["node_modules/@fontsource-variable/" + family + "/files/" + file]: "assets/" + file });
     }
   }
+  config.addFilter("homepageNotices", (notices = []) =>
+    notices.filter(notice => notice.data.showOnHomepage !== false).reverse()
+  );
   config.addFilter("currentWeekends", (preview, club) => {
     if (!club.calendarId || preview?.calendarId !== club.calendarId || preview.zone !== club.calendarZone) return [];
     return preview.weekends.filter(weekend => Date.parse(weekend.until) > Date.now());

@@ -58,10 +58,22 @@ test("publishing a CMS notice creates a linked article", async t => {
   const page = await build(t, {}, "/club/", notice);
   assert.match(await page("news"), /href="\/club\/news\/sample\/">Club gathering/);
   await assert.rejects(page("community"), { code: "ENOENT" });
+  const home = await page("");
+  assert.match(home, /href="\/club\/news\/sample\/">Club gathering/);
+  assert.match(home, /<strong>editorial test<\/strong>/);
+  assert.ok(home.includes('src="/club/assets/uploads/band.jpg"'));
   const article = await page("news/sample");
   assert.ok(article.includes('src="/club/assets/uploads/band.jpg"'), "Notice uploads use the project path");
   assert.match(article, /<h1>Club gathering<\/h1>/);
   assert.match(article, /<strong>editorial test<\/strong>/);
+});
+
+test("a notice removed from the homepage stays in News", async t => {
+  const notice = "---\ntitle: Past closure\nshowOnHomepage: false\n---\nReopened today.";
+  const page = await build(t, {}, "/", notice);
+  assert.doesNotMatch(await page(""), /Past closure|Reopened today/);
+  assert.match(await page("news"), /Past closure/);
+  assert.match(await page("news/sample"), /Reopened today/);
 });
 
 test("renders club Facebook posts as dated HTML with direct permalinks", async t => {

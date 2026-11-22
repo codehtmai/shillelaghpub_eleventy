@@ -3,6 +3,21 @@ layout: base.njk
 title: Home
 ---
 <section class="hero"><img class="hero-img" src="{{ club.heroImage | url }}" alt="" fetchpriority="high"><div class="wrap hero-body"><p class="eyebrow"><span></span>{{ club.organization }}</p><h1>{{ club.heroLead }}<br><em>{{ club.name }}.</em></h1><p class="intro">{{ club.intro }}</p><div class="actions"><a class="button" href="{{ '/events/' | url }}"><svg class="ico"><use href="#calendar"/></svg>Explore Events</a><a class="secondary" href="{{ '/story/' | url }}">Our Story <svg class="ico"><use href="#arrow"/></svg></a></div></div></section>
+{% set notices = collections.clubNews | homepageNotices %}
+{% if notices.length %}
+<section class="wrap home-notices" aria-labelledby="pub-announcements">
+  <h2 id="pub-announcements">Pub announcements</h2>
+  <div class="notice-board">
+    {% for notice in notices %}
+    <article class="pub-notice">
+      <p class="notice-date">{{ notice.date | clubDate }}</p>
+      <h3><a href="{{ notice.url | url }}">{{ notice.data.title }}</a></h3>
+      <div class="article">{{ notice.templateContent | safe }}</div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
 <section class="wrap home-info" aria-label="Weekend events and visiting hours">
   <div class="weekends">
     <h2>Weekends at the pub</h2>

@@ -20,9 +20,9 @@ Eleventy prints the development server address. The static output is in `_site/`
 1. Accept the club’s DecapBridge invitation, then open **Club editor** in the footer. Click the login button and sign in using the invited email address with Google, Microsoft, or the method offered by DecapBridge.
 2. Open **Club website → Club information and integrations** to change the homepage, story, photograph, visiting details, or external services.
 3. For Google Calendar, make the club calendar public with event details visible. Under **Settings → Integrate calendar**, copy the Calendar ID. Enter that ID and the time zone in the editor.
-4. Enter the public Facebook Page URL. The Club News page links directly to this Page. Dated posts are synchronized for the configured ShillelaghPub feed.
+4. Enter the public Facebook Page URL. The News page links directly to this Page. Dated posts are synchronized for the configured ShillelaghPub feed.
 5. Enter the complete street address including town, state and ZIP. This powers both the map and the directions link. Enter hours only when confirmed.
-6. For a standalone announcement, open **Club notices**, create a notice, and publish. It appears on Club News and has its own shareable page.
+6. For a standalone announcement, open **Pub announcements**, create a notice, and publish. It appears on News and has its own shareable page.
 7. Publish saves the content to GitHub and starts the build. Calendar events update directly from Google Calendar. GitHub Actions refreshes Facebook posts on deployment and on a six-hour schedule.
 
 ### Manage editor access

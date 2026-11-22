@@ -67,7 +67,7 @@ collections:
                   - { name: price, label: Price, widget: string }
                   - { name: description, label: Description and options, widget: text, required: false }
   - name: notices
-    label: Club notices
+    label: Pub announcements
     folder: src/news
     create: true
     extension: md

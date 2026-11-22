@@ -75,5 +75,5 @@ collections:
     fields:
       - { name: title, label: Headline, widget: string }
       - { name: date, label: Publication date, widget: datetime }
-      - { name: showOnHomepage, label: Show on homepage, widget: boolean, default: true, required: false, hint: "Turn off when the notice is over to keep it only in News." }
+      - { name: showOnHomepage, label: Show on homepage, widget: homepage-visibility, default: true, required: false, hint: "Turn off when the notice is over to keep it only in News." }
       - { name: body, label: Notice, widget: markdown }

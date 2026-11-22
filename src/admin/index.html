@@ -9,6 +9,7 @@
 </head>
 <body>
   <script>
+    window.CMS_MANUAL_INIT = true;
     // Use the callback registered with DecapBridge for bookmarked directory URLs too.
     if (location.pathname.endsWith('/')) {
       history.replaceState(null, '', 'index.html' + location.search + location.hash);
@@ -17,5 +18,15 @@
   <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.18.0/dist/decap-cms.js"
           integrity="sha384-Vu0vdYOBhK+2KywHCtNZ9sCqpzkwx358AT6pCSg8om/clLoDzpWYF41jrtEk/WMM"
           crossorigin="anonymous"></script>
+  <script>
+    // Existing notices can predate this field. Show the same default as the homepage.
+    CMS.registerWidget('homepage-visibility', function HomepageVisibility(props) {
+      return h(CMS.getWidget('boolean').control, {
+        ...props,
+        value: props.value ?? props.field.get('default')
+      });
+    });
+    CMS.init();
+  </script>
 </body>
 </html>

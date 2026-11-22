@@ -57,7 +57,7 @@ test("publishing a CMS notice creates a linked article", async t => {
   const notice = "---\ntitle: Club gathering\ndate: 2026-01-02\n---\nAn **editorial test** notice.\n\n![Club band](/assets/uploads/band.jpg)";
   const page = await build(t, {}, "/club/", notice);
   assert.match(await page("news"), /href="\/club\/news\/sample\/">Club gathering/);
-  assert.match(await page("community"), /http-equiv="refresh" content="0; url=\/club\/news\/"/);
+  await assert.rejects(page("community"), { code: "ENOENT" });
   const article = await page("news/sample");
   assert.ok(article.includes('src="/club/assets/uploads/band.jpg"'), "Notice uploads use the project path");
   assert.match(article, /<h1>Club gathering<\/h1>/);

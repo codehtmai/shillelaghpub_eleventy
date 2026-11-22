@@ -15,7 +15,7 @@ Use forest green, ivory, brass accents, locally bundled serif and sans-serif typ
 
 ## Implementation and verification
 
-Eleventy builds Home, Our Story, Menu, Events, News, and Visit the Club at a root domain or project Pages path. Decap CMS manages visitor information, integration settings, homepage content, and notices. Google Calendar and Google Maps load directly from their providers. News keeps its original /community/ address and groups pub announcements and recent Facebook posts under separate headings. Facebook posts are rendered as dated HTML with direct permalinks. The GitHub Actions workflow tests changes and deploys main to Pages.
+Eleventy builds Home, Our Story, Menu, Events, News, and Visit the Club at a root domain or project Pages path. Decap CMS manages visitor information, integration settings, homepage content, and notices. Google Calendar and Google Maps load directly from their providers. News is published at /news/. The former /community/ URL redirects there. The listing groups pub announcements and recent Facebook posts under separate headings. Facebook posts are rendered as dated HTML with direct permalinks. The GitHub Actions workflow tests changes and deploys main to Pages.
 
 The automated suite checks empty and populated settings, subpath routing, and notice publication. All three tests passed after the verified values were added. The production subpath build passed. The three actual embed URLs returned HTTP 200 with the expected club calendar, pub timeline, and mapped address. The public calendar feed also returned dated events. Chromium verified homepage imagery and the mobile route to the pub phone number. CMS sign-in requires an editor with repository access.
 

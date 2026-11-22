@@ -1,20 +1,13 @@
 ---
-layout: base.njk
-title: News
+eleventyExcludeFromCollections: true
 ---
-<section class="wrap inside"><h1>News</h1><p class="lede">The latest from the pub, including announcements and Facebook posts.</p>
-{% if collections.clubNews.length %}<section class="news"><h2>Pub announcements</h2><ul>{% for notice in collections.clubNews | reverse %}<li><a class="textlink" href="{{ notice.url | url }}">{{ notice.data.title }}</a></li>{% endfor %}</ul></section>{% endif %}
-{% set fb = club.facebookUrl | facebookPage %}
-{% if fb %}
-<section class="facebook-news" aria-labelledby="facebook-posts"><h2 id="facebook-posts">Latest Facebook posts</h2>
-{% if fb == facebookFeed.pageUrl and facebookFeed.posts.length %}
-<ul>{% for post in facebookFeed.posts %}
-<li><time datetime="{{ post.date }}">{{ post.date | clubDate }}</time>
-{% if post.text %}<p>{{ post.text }}</p>{% endif %}
-{% for photo in post.photos %}<img class="post-photo" src="{{ photo | url }}" loading="lazy" alt="Photo {{ loop.index }} from the pub’s {{ post.date | clubDate }} Facebook post">{% endfor %}
-<a class="textlink" href="{{ post.url }}">View post on Facebook ↗</a></li>
-{% endfor %}</ul>
-{% endif %}
-<a class="button" href="{{ fb }}">Visit our Facebook page ↗</a>
-</section>
-{% else %}<div class="notice"><h2>Facebook updates</h2><p>Posts will appear here once the pub connects its Facebook page.</p></div>{% endif %}</section>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>News · The Shillelagh</title>
+  <meta http-equiv="refresh" content="0; url={{ '/news/' | url }}">
+  <link rel="canonical" href="{{ '/news/' | url }}">
+</head>
+<body><a href="{{ '/news/' | url }}">Go to News</a></body>
+</html>

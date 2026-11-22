@@ -54,10 +54,11 @@ test("renders provider URLs and direct links from editor settings", async t => {
 });
 
 test("publishing a CMS notice creates a linked article", async t => {
-  const notice = "---\ntitle: Club gathering\ndate: 2026-01-02\n---\nAn **editorial test** notice.";
+  const notice = "---\ntitle: Club gathering\ndate: 2026-01-02\n---\nAn **editorial test** notice.\n\n![Club band](/assets/uploads/band.jpg)";
   const page = await build(t, {}, "/club/", notice);
   assert.match(await page("community"), /href="\/club\/news\/sample\/">Club gathering/);
   const article = await page("news/sample");
+  assert.ok(article.includes('src="/club/assets/uploads/band.jpg"'), "Notice uploads use the project path");
   assert.match(article, /<h1>Club gathering<\/h1>/);
   assert.match(article, /<strong>editorial test<\/strong>/);
 });

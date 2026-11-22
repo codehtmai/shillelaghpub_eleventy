@@ -1,5 +1,10 @@
 export default function (config) {
   config.setNunjucksEnvironmentOptions({ autoescape: true });
+  // Decap writes site-root media paths into notice Markdown.
+  config.htmlTransformer.addUrlTransform("html", url =>
+    url.startsWith("/assets/uploads/") ? config.getFilter("url")(url) : url,
+    { enabled: page => page.url?.startsWith("/news/") }
+  );
   config.addPassthroughCopy("src/assets");
   config.addPassthroughCopy("src/admin");
   config.addPassthroughCopy({ "src/_data/facebookFeed.json": "assets/facebook-feed.json" });

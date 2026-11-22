@@ -39,3 +39,5 @@ The homepage uses the CMS pub and kitchen hours, and the shared footer links the
 ## Club editor sign-in
 
 The GitHub Pages editor uses Decap CMS with the club’s DecapBridge Git Gateway and PKCE configuration. Volunteers use invited email addresses and the identity providers offered by DecapBridge. The club owner manages collaborator access in DecapBridge. The footer targets the registered /admin/index.html login address. Keep the public configuration and editing collections together; the repository access credential belongs in DecapBridge.
+
+Notice images uploaded through the editor use site-root media paths in Markdown. Eleventy resolves those paths against the deployment prefix when rendering notice pages.

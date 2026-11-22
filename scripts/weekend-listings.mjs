@@ -31,7 +31,7 @@ export function weekendListings(ics, today = new Date()) {
         const continued = item.start < from;
         const date = continued ? from : item.start;
         const time = continued ? "Continuing" : item.isFullDay ? "All day" : timeFormat.format(date);
-        let title = String(item.summary?.val ?? item.summary ?? "").trim() || "Club event";
+        let title = String(item.summary?.val ?? item.summary ?? "").trim() || "Pub event";
         const dateTimePrefix = (date.getMonth() + 1) + "/" + date.getDate() + " " + time + " ";
         if (title.startsWith(dateTimePrefix)) title = title.slice(dateTimePrefix.length);
         return { title, day: dayFormat.format(date), time };

@@ -2,7 +2,7 @@
 layout: base.njk
 title: Events
 ---
-<section class="wrap inside"><p class="eyebrow dark"><span></span>Around the club</p><h1>Club Events</h1><p class="lede">Gatherings and dates from the club calendar.</p>
+<section class="wrap inside"><h1>Pub Events</h1><p class="lede">See what’s on at The Shillelagh.</p>
 {% if club.calendarId %}{% set calendar = "https://calendar.google.com/calendar/embed?src=" + (club.calendarId | query) + "&ctz=" + (club.calendarZone | query) %}
-<iframe class="embed" title="Club Google Calendar" src="{{ calendar }}&amp;mode=AGENDA"></iframe><a class="textlink" href="{{ calendar }}">Open in Google Calendar ↗</a>
-{% else %}<div class="notice"><h2>Club calendar</h2><p>The public calendar will appear here when the club connects it.</p></div>{% endif %}</section>
+<iframe class="embed" title="Pub events on Google Calendar" src="{{ calendar }}&amp;mode=AGENDA"></iframe><a class="textlink" href="{{ calendar }}">Open in Google Calendar ↗</a>
+{% else %}<div class="notice"><h2>Pub calendar</h2><p>Check back for upcoming events at the pub.</p></div>{% endif %}</section>

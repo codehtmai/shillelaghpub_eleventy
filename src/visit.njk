@@ -1,10 +1,10 @@
 ---
 layout: base.njk
-title: Visit the Club
+title: Visit the Pub
 ---
-<section class="wrap inside"><p class="eyebrow dark"><span></span>The Shillelagh</p><h1>Visit the Club</h1>
-{% if club.address %}<p class="lede">{{ club.address }}{% if club.phone %} · <a class="textlink" href="tel:{{ club.phone | replace("(", "") | replace(")", "") | replace(" ", "") }}">{{ club.phone }}</a>{% endif %}</p><iframe class="embed map" title="Map of the club location" src="https://maps.google.com/maps?q={{ club.address | query }}&amp;output=embed" loading="lazy"></iframe><a class="textlink" href="https://www.google.com/maps/dir/?api=1&amp;destination={{ club.address | query }}">Get directions ↗</a>
-{% else %}<div class="notice"><h2>Location &amp; directions</h2><p>The club is confirming its visitor information. Check back for the street address and map.</p></div>{% endif %}
-<div class="visit-info">{% if club.hours %}<div><h2>Opening hours</h2><p class="body-copy">{{ club.hours }}</p></div>{% endif %}
+<section class="wrap inside"><p class="eyebrow dark"><span></span>The Shillelagh</p><h1>Visit the Pub</h1>
+{% if club.address %}<p class="lede">{{ club.address }}{% if club.phone %} · <a class="textlink" href="tel:{{ club.phone | replace("(", "") | replace(")", "") | replace(" ", "") }}">{{ club.phone }}</a>{% endif %}</p><iframe class="embed map" title="Map showing the pub’s location" src="https://maps.google.com/maps?q={{ club.address | query }}&amp;output=embed" loading="lazy"></iframe><a class="textlink" href="https://www.google.com/maps/dir/?api=1&amp;destination={{ club.address | query }}">Get directions ↗</a>
+{% else %}<div class="notice"><h2>Location &amp; directions</h2><p>Check back for the pub’s street address and map.</p></div>{% endif %}
+<div class="visit-info">{% if club.hours %}<div><h2>Pub hours</h2><p class="body-copy">{{ club.hours }}</p></div>{% endif %}
 {% if club.kitchenHours %}<div><h2>Kitchen hours</h2><p class="body-copy">{{ club.kitchenHours }}</p></div>{% endif %}
 {% if club.rental %}<div><h2>Private gatherings</h2><p class="body-copy">{{ club.rental }}</p></div>{% endif %}</div></section>

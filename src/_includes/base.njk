@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{{ title }} · {{ club.organization }}</title><meta name="description" content="{{ club.intro }}">
+<title>{{ title }} · {{ club.name }}</title><meta name="description" content="{{ club.intro }}">
 <link rel="stylesheet" href="{{ '/assets/style.css' | url }}"><link rel="icon" href="{{ '/assets/mark.svg' | url }}"></head>
 <body>{% include "icons.njk" %}<a class="skip" href="#main">Skip to content</a>
 <header><div class="wrap mast"><a class="identity" href="{{ '/' | url }}"><span class="seal"><svg aria-hidden="true"><use href="#clover"/></svg></span><span><b>{{ club.name }}</b><small>FRIENDLY SONS OF THE SHILLELAGH</small></span></a>
 <button class="menu" aria-controls="nav" aria-expanded="false">Navigate <span aria-hidden="true">☰</span></button>
 <nav id="nav" aria-label="Main navigation">{% for item in navigation %}<a href="{{ item.path | url }}" {% if page.url == item.path %}aria-current="page"{% endif %} {% if item.path == '/visit/' %}class="visit"{% endif %}>{% if item.path == '/visit/' %}<svg class="ico"><use href="#pin"/></svg>{% endif %}{{ item.label }}</a>{% endfor %}</nav></div></header>
-<main id="main">{{ content | safe }}</main><footer><div class="wrap foot"><div><svg aria-hidden="true"><use href="#clover"/></svg> {{ club.organization }}</div>{% if club.address %}<address><a href="https://www.google.com/maps/dir/?api=1&amp;destination={{ club.address | query }}">{{ club.address }}</a></address>{% endif %}<a href="{{ '/admin/index.html' | url }}">Club editor</a></div></footer>
+<main id="main">{{ content | safe }}</main><footer><div class="wrap foot"><div><svg aria-hidden="true"><use href="#clover"/></svg> {{ club.organization }}</div>{% if club.address %}<address><a href="https://www.google.com/maps/dir/?api=1&amp;destination={{ club.address | query }}">{{ club.address }}</a></address>{% endif %}<a href="{{ '/admin/index.html' | url }}">Pub editor</a></div></footer>
 <script src="{{ '/assets/nav.js' | url }}" defer></script></body></html>

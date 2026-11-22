@@ -96,7 +96,7 @@ async function clubPosts() {
       posts.push(await withPhotos({ url: link.attribs.href, text, date: Number(row.attribs["data-cff-timestamp"]) * 1000 }, photos));
     }
   }
-  if (!posts.length) throw new Error("No published club feed entries found");
+  if (!posts.length) throw new Error("No published pub feed entries found");
   return posts.slice(0, 5);
 }
 
@@ -108,7 +108,7 @@ try {
   const token = process.env.FACEBOOK_PAGE_ACCESS_TOKEN;
   const posts = token ? await graphPosts(token) : await clubPosts();
   await save(posts);
-  console.log("Refreshed " + posts.length + " public club posts.");
+  console.log("Refreshed " + posts.length + " public pub posts.");
 } catch (error) {
   console.warn("::warning::Facebook refresh failed (" + error.message + "). Keeping the last published feed.");
   try {

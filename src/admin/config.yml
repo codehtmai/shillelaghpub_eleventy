@@ -25,26 +25,26 @@ media_folder: src/assets/uploads
 public_folder: /assets/uploads
 collections:
   - name: club
-    label: Club website
+    label: Pub website
     files:
       - name: settings
-        label: Club information and integrations
+        label: Pub information and integrations
         file: src/_data/club.json
         format: json
         fields:
-          - { name: name, label: Club name, widget: string }
+          - { name: name, label: Pub name, widget: string }
           - { name: organization, label: Organization name, widget: string }
           - { name: heroLead, label: Welcome heading first line, widget: string }
           - { name: intro, label: Homepage introduction, widget: text }
           - { name: heroImage, label: Homepage photograph, widget: image }
           - { name: storyTitle, label: Story heading, widget: string }
-          - { name: story, label: Club story, widget: text }
+          - { name: story, label: Pub story, widget: text }
           - { name: calendarId, label: Public Google Calendar ID, widget: string, required: false, hint: "Copy Calendar ID from Settings → Integrate calendar. Enable public event viewing." }
           - { name: calendarZone, label: Calendar time zone, widget: string, hint: "Use a time zone such as America/New_York." }
           - { name: facebookUrl, label: Public Facebook page URL, widget: string, required: false }
           - { name: address, label: Street address for directions and map, widget: string, required: false }
-          - { name: hours, label: Visiting hours, widget: text, required: false }
-          - { name: phone, label: Club phone number, widget: string, required: false }
+          - { name: hours, label: Pub hours, widget: text, required: false }
+          - { name: phone, label: Pub phone number, widget: string, required: false }
           - { name: kitchenHours, label: Kitchen hours, widget: text, required: false }
           - { name: rental, label: Private gatherings, widget: text, required: false }
       - name: pubmenu

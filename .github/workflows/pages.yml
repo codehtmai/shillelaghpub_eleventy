@@ -1,4 +1,4 @@
-name: Build and deploy the club website
+name: Build and deploy the pub website
 on:
   push:
     branches: [main]

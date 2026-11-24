@@ -28,9 +28,11 @@ async function build(t, settings, prefix, notice = "") {
 
 test("renders seven public pages and handles unconfigured services on a project subpath", async t => {
   const page = await build(t, { facebookUrl: "", address: "", calendarId: "" }, "/club/");
-  for (const route of ["", "story", "menus", "news", "events", "hall-rental", "visit"]) {
+  await assert.rejects(page("story"), { code: "ENOENT" });
+  for (const route of ["", "about", "menus", "news", "events", "hall-rental", "visit"]) {
     const html = await page(route);
     assert.match(html, /<h1>/);
+    assert.match(html, /href="\/club\/about\/"[^>]*>About<\/a>\s*<\/nav>/);
     assert.match(html, /href="\/club\/assets\/style.css"/);
     assert.match(html, /href="\/club\/visit\/"/);
     assert.doesNotMatch(html, /<iframe/);

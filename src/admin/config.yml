@@ -37,8 +37,8 @@ collections:
           - { name: heroLead, label: Welcome heading first line, widget: string }
           - { name: intro, label: Homepage introduction, widget: text }
           - { name: heroImage, label: Homepage photograph, widget: image }
-          - { name: storyTitle, label: Story heading, widget: string }
-          - { name: story, label: Pub story, widget: text }
+          - { name: storyTitle, label: About section heading, widget: string }
+          - { name: story, label: About page text, widget: text }
           - { name: calendarId, label: Public Google Calendar ID, widget: string, required: false, hint: "Copy Calendar ID from Settings → Integrate calendar. Enable public event viewing." }
           - { name: calendarZone, label: Calendar time zone, widget: string, hint: "Use a time zone such as America/New_York." }
           - { name: facebookUrl, label: Public Facebook page URL, widget: string, required: false }

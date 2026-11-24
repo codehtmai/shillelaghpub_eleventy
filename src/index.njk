@@ -2,7 +2,7 @@
 layout: base.njk
 title: Home
 ---
-<section class="hero"><img class="hero-img" src="{{ club.heroImage | url }}" alt="" fetchpriority="high"><div class="wrap hero-body"><p class="eyebrow"><span></span>{{ club.organization }}</p><h1>{{ club.heroLead }}<br><em>{{ club.name }}.</em></h1><p class="intro">{{ club.intro }}</p><div class="actions"><a class="button" href="{{ '/events/' | url }}"><svg class="ico"><use href="#calendar"/></svg>Explore Events</a><a class="secondary" href="{{ '/story/' | url }}">Our Story <svg class="ico"><use href="#arrow"/></svg></a></div></div></section>
+<section class="hero"><img class="hero-img" src="{{ club.heroImage | url }}" alt="" fetchpriority="high"><div class="wrap hero-body"><p class="eyebrow"><span></span>{{ club.organization }}</p><h1>{{ club.heroLead }}<br><em>{{ club.name }}.</em></h1><p class="intro">{{ club.intro }}</p><div class="actions"><a class="button" href="{{ '/events/' | url }}"><svg class="ico"><use href="#calendar"/></svg>Explore Events</a><a class="secondary" href="{{ '/about/' | url }}">About <svg class="ico"><use href="#arrow"/></svg></a></div></div></section>
 {% set notices = collections.clubNews | homepageNotices %}
 {% if notices.length %}
 <section class="wrap home-notices" aria-labelledby="pub-announcements">

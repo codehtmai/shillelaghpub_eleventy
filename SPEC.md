@@ -5,7 +5,7 @@ This website serves visitors to The Shillelagh, the public pub of the Friendly S
 ## Sources and editorial decisions
 
 - The Essex landing page introduces four affiliated destinations, including the pub and the foundation. Its spare typography and short navigation informed the homepage. [Essex Shillelaghs](https://shillelaghclub.com/)
-- The foundation site covers charitable programs, membership, and Irish heritage. The Story page describes the Frank Schott Blood Drive and St. Baldrick’s fundraising and links to the foundation. [Foundation](https://essexshillelagh.com/) · [Club history](https://shillelaghpub.com/club/the-order-of-the-friendly-sons-of-the-shillelagh/)
+- The foundation site covers charitable programs, membership, and Irish heritage. The About page describes the Frank Schott Blood Drive and St. Baldrick’s fundraising and links to the foundation. [Foundation](https://essexshillelagh.com/) · [Club history](https://shillelaghpub.com/club/the-order-of-the-friendly-sons-of-the-shillelagh/)
 - The pub site supplies the visitor address, phone, and separate bar and kitchen hours. Use the pub’s Friday opening time of noon. The foundation lists 3 pm on Fridays. The hall and covered deck are available by inquiry. [Visitor information](https://shillelaghpub.com/) · [Rentals](https://shillelaghpub.com/hall-rental/)
 - The existing event page identifies the public Google Calendar and its New York time zone. The pub timeline identifies Facebook Page ID 431613724250812, whose embed resolves to ShillelaghPub. [Calendar](https://shillelaghpub.com/events-list/calendar/) · [Pub Facebook page](https://www.facebook.com/ShillelaghPub)
 
@@ -19,7 +19,7 @@ Use forest green, ivory, brass accents, locally bundled serif and sans-serif typ
 
 ## Implementation and verification
 
-Eleventy builds Home, Our Story, Menu, Events, News, Hall Rental, and Visit the Pub at a root domain or project Pages path. Decap CMS manages visitor information, integration settings, homepage content, and notices. Google Calendar and Google Maps load directly from their providers. The sole listing URL for News is /news/. The listing groups pub announcements and recent Facebook posts under separate headings. Facebook posts are rendered as dated HTML with direct permalinks. The GitHub Actions workflow tests changes and deploys main to Pages.
+Eleventy builds Home, Menu, Events, News, Hall Rental, Visit the Pub, and About at a root domain or project Pages path. About uses /about/ and is the last link in the main navigation. Decap CMS manages visitor information, integration settings, homepage content, and notices. Google Calendar and Google Maps load directly from their providers. The sole listing URL for News is /news/. The listing groups pub announcements and recent Facebook posts under separate headings. Facebook posts are rendered as dated HTML with direct permalinks. The GitHub Actions workflow tests changes and deploys main to Pages.
 
 The automated suite checks empty and populated settings, subpath routing, and notice publication. All three tests passed after the verified values were added. The production subpath build passed. The three actual embed URLs returned HTTP 200 with the expected pub calendar, pub timeline, and mapped address. The public calendar feed also returned dated events. Chromium verified homepage imagery and the mobile route to the pub phone number. Editors sign in through DecapBridge using an invited email address.
 

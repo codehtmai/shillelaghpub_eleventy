@@ -32,7 +32,10 @@ test("renders seven public pages and handles unconfigured services on a project 
   for (const route of ["", "about", "menus", "news", "events", "hall-rental", "visit"]) {
     const html = await page(route);
     assert.match(html, /<h1>/);
-    assert.match(html, /href="\/club\/about\/"[^>]*>About<\/a>\s*<\/nav>/);
+    const nav = html.match(/<nav id="nav"[^>]*>(.*?)<\/nav>/s)[1];
+    const links = Array.from(nav.matchAll(/<a href="([^"]+)"/g), match => match[1]);
+    assert.deepEqual(links, ["/club/", "/club/events/", "/club/news/", "/club/menus/",
+      "/club/hall-rental/", "/club/about/", "/club/visit/"]);
     assert.match(html, /href="\/club\/assets\/style.css"/);
     assert.match(html, /href="\/club\/visit\/"/);
     assert.doesNotMatch(html, /<iframe/);

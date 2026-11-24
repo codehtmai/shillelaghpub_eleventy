@@ -3,7 +3,7 @@ export default function (config) {
   // Decap writes site-root media paths into notice Markdown.
   config.htmlTransformer.addUrlTransform("html", url =>
     url.startsWith("/assets/uploads/") ? config.getFilter("url")(url) : url,
-    { enabled: page => page.url === "/" || page.url?.startsWith("/news/") }
+    { enabled: page => page.url === "/" || page.url === "/hall-rental/" || page.url?.startsWith("/news/") }
   );
   config.addPassthroughCopy("src/assets");
   config.addPassthroughCopy("src/admin");

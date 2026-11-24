@@ -48,3 +48,10 @@ header{position:relative;z-index:4;background:#fbf9f2}.mast,.identity,nav,.visit
 .pub-notice .article { margin: 12px 0 0; }
 .pub-notice .article > :last-child { margin-bottom: 0; }
 .pub-notice img { vertical-align: middle; }
+
+.rental-intro { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 80px); align-items: center; }
+.rental-intro img { display: block; width: 100%; height: auto; border-radius: 3px; }
+.rental-intro p:last-child { margin-bottom: 0; }
+.rental-details { margin-top: 3rem; }
+.rental-details h2 { padding-top: 1.4rem; border-top: 1px solid #d4d1c3; margin-top: 1.8rem; }
+@media (max-width: 760px) { .rental-intro { grid-template-columns: 1fr; } }

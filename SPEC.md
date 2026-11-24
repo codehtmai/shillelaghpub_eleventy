@@ -9,6 +9,8 @@ This website serves visitors to The Shillelagh, the public pub of the Friendly S
 - The pub site supplies the visitor address, phone, and separate bar and kitchen hours. Use the pub’s Friday opening time of noon. The foundation lists 3 pm on Fridays. The hall and covered deck are available by inquiry. [Visitor information](https://shillelaghpub.com/) · [Rentals](https://shillelaghpub.com/hall-rental/)
 - The existing event page identifies the public Google Calendar and its New York time zone. The pub timeline identifies Facebook Page ID 431613724250812, whose embed resolves to ShillelaghPub. [Calendar](https://shillelaghpub.com/events-list/calendar/) · [Pub Facebook page](https://www.facebook.com/ShillelaghPub)
 
+The Hall Rental page preserves the original rental copy, including each space, amenities, and booking contacts. It uses the existing photograph of the upstairs hall set for a party. Volunteers can edit the copy and photograph under **Pub website → Hall Rental**. [Original rental page](https://shillelaghpub.com/hall-rental/)
+
 ## Design and content
 
 Use “pub” for the venue in navigation, headings, accessibility labels, and the volunteer editor. Name the Friendly Sons of the Shillelagh when describing the organization and its history. Published notices and imported posts use their authors’ wording.
@@ -17,7 +19,7 @@ Use forest green, ivory, brass accents, locally bundled serif and sans-serif typ
 
 ## Implementation and verification
 
-Eleventy builds Home, Our Story, Menu, Events, News, and Visit the Pub at a root domain or project Pages path. Decap CMS manages visitor information, integration settings, homepage content, and notices. Google Calendar and Google Maps load directly from their providers. The sole listing URL for News is /news/. The listing groups pub announcements and recent Facebook posts under separate headings. Facebook posts are rendered as dated HTML with direct permalinks. The GitHub Actions workflow tests changes and deploys main to Pages.
+Eleventy builds Home, Our Story, Menu, Events, News, Hall Rental, and Visit the Pub at a root domain or project Pages path. Decap CMS manages visitor information, integration settings, homepage content, and notices. Google Calendar and Google Maps load directly from their providers. The sole listing URL for News is /news/. The listing groups pub announcements and recent Facebook posts under separate headings. Facebook posts are rendered as dated HTML with direct permalinks. The GitHub Actions workflow tests changes and deploys main to Pages.
 
 The automated suite checks empty and populated settings, subpath routing, and notice publication. All three tests passed after the verified values were added. The production subpath build passed. The three actual embed URLs returned HTTP 200 with the expected pub calendar, pub timeline, and mapped address. The public calendar feed also returned dated events. Chromium verified homepage imagery and the mobile route to the pub phone number. Editors sign in through DecapBridge using an invited email address.
 

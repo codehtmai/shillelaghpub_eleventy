@@ -1,0 +1,13 @@
+---
+layout: base.njk
+---
+<article class="wrap inside rental">
+  <div class="rental-intro">
+    <div>
+      <h1>{{ title }}</h1>
+      {% for paragraph in intro.split("\n\n") %}<p class="lede">{{ paragraph }}</p>{% endfor %}
+    </div>
+    <img src="{{ photo | url }}" alt="{{ photoAlt }}">
+  </div>
+  <div class="article rental-details">{{ content | safe }}</div>
+</article>

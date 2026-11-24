@@ -47,6 +47,16 @@ collections:
           - { name: phone, label: Pub phone number, widget: string, required: false }
           - { name: kitchenHours, label: Kitchen hours, widget: text, required: false }
           - { name: rental, label: Private gatherings, widget: text, required: false }
+      - name: hallrental
+        label: Hall Rental
+        file: src/hall-rental.md
+        fields:
+          - { name: layout, widget: hidden, default: rental.njk }
+          - { name: title, label: Page title, widget: string }
+          - { name: intro, label: Introduction, widget: text }
+          - { name: photo, label: Hall photograph, widget: image }
+          - { name: photoAlt, label: Photo description, widget: string }
+          - { name: body, label: Rental details and booking contact, widget: markdown }
       - name: pubmenu
         label: Pub menu
         file: src/_data/pubMenu.json

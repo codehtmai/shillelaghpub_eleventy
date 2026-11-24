@@ -7,4 +7,4 @@ title: Visit the Pub
 {% else %}<div class="notice"><h2>Location &amp; directions</h2><p>Check back for the pub’s street address and map.</p></div>{% endif %}
 <div class="visit-info">{% if club.hours %}<div><h2>Pub hours</h2><p class="body-copy">{{ club.hours }}</p></div>{% endif %}
 {% if club.kitchenHours %}<div><h2>Kitchen hours</h2><p class="body-copy">{{ club.kitchenHours }}</p></div>{% endif %}
-{% if club.rental %}<div><h2>Private gatherings</h2><p class="body-copy">{{ club.rental }}</p></div>{% endif %}</div></section>
+{% if club.rental %}<div><h2>Private gatherings</h2><p class="body-copy">{{ club.rental }}</p><a class="textlink" href="{{ '/hall-rental/' | url }}">Hall Rental</a></div>{% endif %}</div></section>

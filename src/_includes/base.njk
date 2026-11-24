@@ -9,10 +9,10 @@
 <main id="main">{{ content | safe }}</main>
 <footer>
   <div class="wrap foot">
-    <div><svg aria-hidden="true"><use href="#clover"/></svg><a href="https://shillelaghclub.com/">{{ club.organization }}</a></div>
+    <a class="foot-name" href="https://shillelaghclub.com/"><svg aria-hidden="true"><use href="#clover"/></svg>{{ club.organization }}</a>
     <a href="https://essexshillelagh.com/">FSOS Foundation</a>
     {% if club.address %}<address><a href="https://www.google.com/maps/dir/?api=1&amp;destination={{ club.address | query }}">{{ club.address }}</a></address>{% endif %}
-    <a href="{{ '/admin/index.html' | url }}">Pub editor</a>
+    <div class="foot-staff"><a href="{{ '/admin/index.html' | url }}">Staff login</a></div>
   </div>
 </footer>
 <script src="{{ '/assets/nav.js' | url }}" defer></script></body></html>

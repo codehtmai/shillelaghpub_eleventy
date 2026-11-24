@@ -17,7 +17,7 @@ Eleventy prints the development server address. The static output is in `_site/`
 
 ## Edit the site
 
-1. Accept your DecapBridge invitation, then open **Pub editor** in the footer. Click the login button and sign in using the invited email address with Google, Microsoft, or the method offered by DecapBridge.
+1. Accept your DecapBridge invitation, then open **Staff login** in the footer. Click the login button and sign in using the invited email address with Google, Microsoft, or the method offered by DecapBridge.
 2. Open **Pub website → Pub information and integrations** to change the homepage, About page, photograph, visiting details, or external services.
 3. For Google Calendar, make the pub calendar public with event details visible. Under **Settings → Integrate calendar**, copy the Calendar ID. Enter that ID and the time zone in the editor.
 4. Enter the public Facebook Page URL. The News page links directly to this Page. Dated posts are synchronized for the configured ShillelaghPub feed.

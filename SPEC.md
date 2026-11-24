@@ -38,7 +38,7 @@ Post photos are copied into the Pages artifact during refresh, including image-o
 
 ## Homepage visitor information and menu
 
-The homepage uses the CMS pub and kitchen hours, and the shared footer links the CMS address to directions. The organization name in the footer links to the FSOS landing page, with an adjacent FSOS Foundation link. Show the current or upcoming Friday–Sunday period and the following Friday–Sunday in the calendar’s local time. The Pages workflow reads the public Google iCalendar feed every six hours and renders dated lists, including recurring and all-day events. Keep the full calendar on Events. The Menu route preserves the original /menus/ URL and transcribes the old site's June 26, 2024 menu edition into editable dishes and prices. [Published menu source](https://shillelaghpub.com/menus/)
+The homepage uses the CMS pub and kitchen hours, and the shared footer links the CMS address to directions. The organization name in the footer links to the FSOS landing page, with an adjacent FSOS Foundation link. On mobile, public links stack in reading order, followed by a divider and the Staff login link. Show the current or upcoming Friday–Sunday period and the following Friday–Sunday in the calendar’s local time. The Pages workflow reads the public Google iCalendar feed every six hours and renders dated lists, including recurring and all-day events. Keep the full calendar on Events. The Menu route preserves the original /menus/ URL and transcribes the old site's June 26, 2024 menu edition into editable dishes and prices. [Published menu source](https://shillelaghpub.com/menus/)
 
 ## Pub editor sign-in
 

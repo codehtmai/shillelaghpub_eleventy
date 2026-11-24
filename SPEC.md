@@ -25,9 +25,9 @@ The automated suite checks empty and populated settings, subpath routing, and no
 
 ## Launch status
 
-The Eleventy workflow tested, built, and deployed the site to GitHub Pages. Live checks verified the homepage, Story, Events, Community, Visit, and the pub editor, plus the nine referenced assets. The live Events, Community and Visit pages contain the confirmed pub calendar, pub Facebook Page and West Orange address. [Published site](https://codehtmai.github.io/shillelaghpub_eleventy/) · [Verified workflow run](https://github.com/codehtmai/shillelaghpub_eleventy/actions/runs/44235442693/attempts/2)
+The Eleventy workflow tested, built, and deployed the site to GitHub Pages. Live checks verified the homepage, Story, Events, Community, Visit, and the pub editor, plus the nine referenced assets. The live Events, Community and Visit pages contain the confirmed pub calendar, pub Facebook Page and West Orange address. [Published site](https://shillelaghpub.com/) · [Verified workflow run](https://github.com/codehtmai/shillelaghpub_eleventy/actions/runs/44235442693/attempts/2)
 
-At first deployment GitHub also ran its default branch-based Jekyll build, which failed. Selecting GitHub Actions as the Pages source avoids that redundant build. The existing pub domain awaits owner-approved cutover. [Pages settings](https://github.com/codehtmai/shillelaghpub_eleventy/settings/pages)
+At first deployment GitHub also ran its default branch-based Jekyll build, which failed. Selecting GitHub Actions as the Pages source avoids that redundant build. GitHub Pages serves the site at the root of shillelaghpub.com. After a custom domain change, rebuild the site so generated asset URLs and navigation use the new Pages base path. [Pages settings](https://github.com/codehtmai/shillelaghpub_eleventy/settings/pages)
 
 
 ## Facebook reliability

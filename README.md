@@ -33,7 +33,7 @@ In the pub’s DecapBridge dashboard, open the site and use **Manage collaborato
 
 A repository administrator selects **Settings → Pages → Build and deployment → Source → GitHub Actions**. Push to main or run **Build and deploy the pub website** from the Actions tab. Pull requests run the tests and build. The deployment job publishes the resulting artifact and reports the site URL. The workflow reads the Pages base path automatically.
 
-Use the project Pages URL for acceptance testing. For the existing pub domain, the domain owner should verify the domain in GitHub, configure it in Pages, update the DNS records using GitHub's displayed instructions, and enable HTTPS once the certificate is available. Existing domain routing is independent of the code deployment.
+The production site is https://shillelaghpub.com/. After changing the custom domain in Pages, run the deployment workflow to rebuild links for the new base path. Check the homepage and a nested page, including the stylesheet at `/assets/style.css` and the navigation script at `/assets/nav.js`.
 
 ## Media
 
